@@ -72,6 +72,10 @@ export function ResultsPanel({ result }: ResultsPanelProps) {
               <p>{testCase.description}</p>
               <dl>
                 <div>
+                  <dt>Input</dt>
+                  <dd>{testCase.input}</dd>
+                </div>
+                <div>
                   <dt>Expected</dt>
                   <dd>{testCase.expected_result}</dd>
                 </div>
