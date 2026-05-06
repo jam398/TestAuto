@@ -44,6 +44,8 @@ jobs:
 
       - name: Build
         run: npm run build
+        env:
+          VITE_API_BASE_URL: https://testpilot-backend-q3wx.onrender.com
 
       - name: Install Playwright browsers
         run: npx playwright install chromium --with-deps
