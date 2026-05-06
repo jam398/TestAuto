@@ -62,10 +62,26 @@ Configure environment values using `.env.example` or `backend/.env.example` as a
 OPENAI_API_KEY=your_api_key_here
 LLM_MODEL=gpt-5.4-mini
 EMBEDDING_MODEL=text-embedding-3-small
+ALLOWED_ORIGINS=http://localhost:5173,http://127.0.0.1:5173
 VITE_API_BASE_URL=
 ```
 
 For local frontend development, leaving `VITE_API_BASE_URL` empty makes Vite proxy `/api` requests to the local backend. For deployed frontend builds, set it to the deployed backend URL. For local backend development, put backend secrets in `backend/.env`. The backend loads that file automatically, and real process environment variables take precedence.
+
+## Deploy
+
+Backend deployment is configured with `render.yaml` for Render. The service uses `backend` as its root directory, installs `backend/requirements.txt`, and starts `uvicorn app.main:app`.
+
+Set these Render environment variables:
+
+```bash
+OPENAI_API_KEY=your_api_key_here
+LLM_MODEL=gpt-5.4-mini
+EMBEDDING_MODEL=text-embedding-3-small
+ALLOWED_ORIGINS=https://jam398.github.io
+```
+
+The frontend deploy workflow is `.github/workflows/frontend-deploy.yml`. It builds the Vite app from `frontend`, sets `VITE_API_BASE_URL` to the Render backend URL, uploads `frontend/dist`, and deploys it to GitHub Pages. The Vite base path is `/TestAuto/` when running in GitHub Actions, matching the GitHub Pages repository path.
 
 ## Run
 

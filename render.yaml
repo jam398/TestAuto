@@ -10,7 +10,9 @@ services:
       - key: OPENAI_API_KEY
         sync: false
       - key: LLM_MODEL
-        value: gpt-4o-mini
+        value: gpt-5.4-mini
       - key: EMBEDDING_MODEL
         value: text-embedding-3-small
+      - key: ALLOWED_ORIGINS
+        value: https://jam398.github.io
     autoDeploy: true

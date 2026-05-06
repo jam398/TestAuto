@@ -2,7 +2,7 @@ from pathlib import Path
 
 import os
 
-from app.config import load_environment_files
+from app.config import load_environment_files, parse_allowed_origins
 
 
 def test_load_environment_files_reads_backend_env(monkeypatch, tmp_path: Path):
@@ -33,3 +33,14 @@ def test_load_environment_files_does_not_override_process_env(monkeypatch, tmp_p
     load_environment_files([env_file])
 
     assert os.getenv("OPENAI_API_KEY") == "from-process-env"
+
+
+def test_parse_allowed_origins_defaults_to_local_frontend():
+    assert parse_allowed_origins(None) == ("http://localhost:5173", "http://127.0.0.1:5173")
+
+
+def test_parse_allowed_origins_reads_comma_separated_values():
+    assert parse_allowed_origins(" https://jam398.github.io/TestAuto/ , http://localhost:5173 ") == (
+        "https://jam398.github.io/TestAuto",
+        "http://localhost:5173",
+    )

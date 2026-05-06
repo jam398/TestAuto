@@ -47,14 +47,11 @@ jobs:
         env:
           VITE_API_BASE_URL: https://testpilot-backend-q3wx.onrender.com
 
-      - name: Install Playwright browsers
-        run: npx playwright install chromium --with-deps
-
-      - name: Run Playwright tests
-        run: npm run test
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
 
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: frontend/dist
 

@@ -45,9 +45,16 @@ Copy `backend/.env.example` to `backend/.env` for local development, or provide 
 OPENAI_API_KEY=your_api_key_here
 LLM_MODEL=gpt-5.4-mini
 EMBEDDING_MODEL=text-embedding-3-small
+ALLOWED_ORIGINS=http://localhost:5173,http://127.0.0.1:5173
 ```
 
 Values already set in the process environment take precedence over values from `.env` files. Never commit real API keys.
+
+For Render deployment, set `ALLOWED_ORIGINS` to the GitHub Pages origin, for example:
+
+```bash
+ALLOWED_ORIGINS=https://jam398.github.io
+```
 
 ## Test
 
