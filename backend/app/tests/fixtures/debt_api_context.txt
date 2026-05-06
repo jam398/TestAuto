@@ -1,0 +1,17 @@
+POST /api/debts
+
+Creates a new debt record for a user.
+
+Required fields:
+- name: string, required
+- principal: number, must be greater than 0
+- apr: number, must be between 0 and 100
+- minimumPayment: number, must be greater than 0
+
+Successful response:
+- 201 Created
+- returns id, name, principal, apr, minimumPayment, createdAt
+
+Validation errors:
+- 400 Bad Request
+- returns a message describing invalid fields
