@@ -3,8 +3,8 @@ from __future__ import annotations
 import math
 from dataclasses import dataclass
 
-from backend.app.services.chunking import TextChunk
-from backend.app.services.embeddings import DeterministicEmbeddingClient, EmbeddingClient
+from app.services.chunking import TextChunk
+from app.services.embeddings import DeterministicEmbeddingClient, EmbeddingClient
 
 
 @dataclass(frozen=True)

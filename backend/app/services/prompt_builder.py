@@ -1,7 +1,7 @@
 from __future__ import annotations
 
-from backend.app.models.schemas import TestFramework, TestType
-from backend.app.services.chunking import TextChunk
+from app.models.schemas import TestFramework, TestType
+from app.services.chunking import TextChunk
 
 
 def format_retrieved_context(chunks: list[TextChunk]) -> str:

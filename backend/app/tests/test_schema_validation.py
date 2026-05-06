@@ -1,7 +1,7 @@
 import pytest
 from pydantic import ValidationError
 
-from backend.app.models.schemas import (
+from app.models.schemas import (
     EvidenceSnippet,
     GenerateTestsRequest,
     GenerateTestsResponse,
@@ -11,8 +11,8 @@ from backend.app.models.schemas import (
     TestType,
     TestFramework,
 )
-from backend.app.services.llm_client import FakeLLMClient
-from backend.app.services.test_generator import GenerationError, generate_tests_with_llm, parse_llm_response
+from app.services.llm_client import FakeLLMClient
+from app.services.test_generator import GenerationError, generate_tests_with_llm, parse_llm_response
 
 
 def test_request_defaults_framework_to_pytest():

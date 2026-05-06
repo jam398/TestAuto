@@ -1,9 +1,9 @@
 from fastapi import APIRouter, HTTPException
 
-from backend.app.config import get_settings
-from backend.app.models.schemas import GenerateTestsRequest, GenerateTestsResponse
-from backend.app.services.llm_client import LLMClientError, OpenAILLMClient
-from backend.app.services.test_generator import GenerationError, generate_mock_tests, generate_tests_with_llm
+from app.config import get_settings
+from app.models.schemas import GenerateTestsRequest, GenerateTestsResponse
+from app.services.llm_client import LLMClientError, OpenAILLMClient
+from app.services.test_generator import GenerationError, generate_mock_tests, generate_tests_with_llm
 
 router = APIRouter()
 

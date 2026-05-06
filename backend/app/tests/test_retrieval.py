@@ -1,6 +1,6 @@
-from backend.app.services.chunking import TextChunk, chunk_text
-from backend.app.services.embeddings import DeterministicEmbeddingClient
-from backend.app.services.vector_store import (
+from app.services.chunking import TextChunk, chunk_text
+from app.services.embeddings import DeterministicEmbeddingClient
+from app.services.vector_store import (
     InMemoryVectorStore,
     build_retrieval_query,
     retrieve_relevant_chunks,

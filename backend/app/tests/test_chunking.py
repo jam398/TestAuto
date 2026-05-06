@@ -1,6 +1,6 @@
 import pytest
 
-from backend.app.services.chunking import chunk_text, clean_text
+from app.services.chunking import chunk_text, clean_text
 
 
 def test_clean_text_normalizes_whitespace():

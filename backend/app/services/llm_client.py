@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import Any, Protocol
 
-from backend.app.models.schemas import GenerateTestsResponse
+from app.models.schemas import GenerateTestsResponse
 
 
 class LLMClient(Protocol):

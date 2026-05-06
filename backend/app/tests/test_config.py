@@ -2,7 +2,7 @@ from pathlib import Path
 
 import os
 
-from backend.app.config import load_environment_files
+from app.config import load_environment_files
 
 
 def test_load_environment_files_reads_backend_env(monkeypatch, tmp_path: Path):

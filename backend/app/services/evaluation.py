@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
-from backend.app.models.schemas import GenerateTestsResponse
+from app.models.schemas import GenerateTestsResponse
 
 
 @dataclass(frozen=True)

@@ -1,6 +1,6 @@
-from backend.app.models.schemas import TestFramework, TestType
-from backend.app.services.chunking import TextChunk
-from backend.app.services.prompt_builder import build_generation_prompt, format_retrieved_context
+from app.models.schemas import TestFramework, TestType
+from app.services.chunking import TextChunk
+from app.services.prompt_builder import build_generation_prompt, format_retrieved_context
 
 
 def test_format_retrieved_context_includes_chunk_metadata():

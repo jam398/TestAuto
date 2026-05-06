@@ -1,6 +1,6 @@
 import pytest
 
-from backend.app.services.llm_client import FakeLLMClient, LLMClientError, MissingAPIKeyError, OpenAILLMClient
+from app.services.llm_client import FakeLLMClient, LLMClientError, MissingAPIKeyError, OpenAILLMClient
 
 
 def test_fake_llm_client_returns_configured_response_and_records_prompt():

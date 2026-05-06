@@ -3,8 +3,8 @@ from pathlib import Path
 import pytest
 from pydantic import ValidationError
 
-from backend.app.models.schemas import EvidenceSnippet, GenerateTestsResponse, ProviderMode, TestCase, TestType
-from backend.app.services.evaluation import evaluate_generated_response, evaluation_warnings
+from app.models.schemas import EvidenceSnippet, GenerateTestsResponse, ProviderMode, TestCase, TestType
+from app.services.evaluation import evaluate_generated_response, evaluation_warnings
 
 
 DEBT_CONTEXT = """

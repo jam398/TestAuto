@@ -1,6 +1,6 @@
 import json
 
-from backend.app.models.schemas import (
+from app.models.schemas import (
     EvidenceSnippet,
     GenerateTestsRequest,
     GenerateTestsResponse,
@@ -9,11 +9,11 @@ from backend.app.models.schemas import (
     TestType,
     TestFramework,
 )
-from backend.app.services.chunking import TextChunk, chunk_text
-from backend.app.services.evaluation import evaluate_generated_response, evaluation_warnings
-from backend.app.services.llm_client import FakeLLMClient, LLMClient
-from backend.app.services.prompt_builder import build_generation_prompt
-from backend.app.services.vector_store import build_retrieval_query, retrieve_relevant_chunks
+from app.services.chunking import TextChunk, chunk_text
+from app.services.evaluation import evaluate_generated_response, evaluation_warnings
+from app.services.llm_client import FakeLLMClient, LLMClient
+from app.services.prompt_builder import build_generation_prompt
+from app.services.vector_store import build_retrieval_query, retrieve_relevant_chunks
 
 
 class GenerationError(RuntimeError):
